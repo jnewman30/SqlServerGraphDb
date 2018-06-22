@@ -1,0 +1,8 @@
+﻿
+CREATE TABLE Products (
+	[Id] INT IDENTITY PRIMARY KEY,
+	[Code] NVARCHAR(100) NOT NULL,
+	[Name] NVARCHAR(100) NOT NULL,
+	[DateCreated] DateTime2 NOT NULL DEFAULT getdate(),
+	[IsActive] BIT NOT NULL DEFAULT 1
+) AS NODE;
