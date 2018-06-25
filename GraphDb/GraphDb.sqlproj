@@ -58,57 +58,8 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Nodes" />
-    <Folder Include="Edges" />
-    <Folder Include="Sprocs" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Nodes\Customers.sql" />
-    <Build Include="Sprocs\Add_Customer.sql" />
-    <Build Include="Sprocs\Add_Product.sql" />
-    <Build Include="Edges\HasCategory.sql" />
-    <Build Include="Sprocs\Add_ProductCategory.sql" />
-    <Build Include="Sprocs\Set_CustomerStatus.sql" />
     <PostDeploy Include="TestData.sql" />
-    <Build Include="Sprocs\Get_CustomerOrders.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Edges\HasOrder.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Nodes\Orders.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Nodes\Products.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Nodes\Sales.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Edges\HasStatus.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Nodes\CustomerStatuses.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Nodes\OrderStatuses.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Nodes\ProductCategories.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Edges\HasSale.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Sprocs\Add_Order.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Sprocs\Add_Sale.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Sprocs\Add_OrderItem.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Edges\HasOrderItem.sql" />
   </ItemGroup>
 </Project>

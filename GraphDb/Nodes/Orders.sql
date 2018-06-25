@@ -1,7 +1,0 @@
-﻿
-CREATE TABLE Orders (
-	[Id] INT IDENTITY PRIMARY KEY,
-	[Number] NVARCHAR(100) NOT NULL,
-	[OrderDate] DateTime2 NOT NULL DEFAULT getdate()
-) AS NODE;
-

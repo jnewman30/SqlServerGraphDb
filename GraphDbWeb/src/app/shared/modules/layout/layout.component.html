@@ -1,11 +1,37 @@
+<td-layout layout-root mode="side" opened="true">
+    <td-navigation-drawer flex name="Jeremy Newman" email="jnewman@paperwise.com">
+        <!-- <img src="/assets/FullColor.Horizontal.png" width="240px"> -->
+        <mat-nav-list>
+            <a *ngFor="let item of routes" mat-list-item>
+                <mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
+        </mat-nav-list>
+        <div td-navigation-drawer-menu>
+            <mat-nav-list>
+                <a *ngFor="let item of usermenu" mat-list-item>
+                    <mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
+            </mat-nav-list>
+        </div>
+    </td-navigation-drawer>
+    <td-layout-nav logo="assets:covalent" [toolbarTitle]="name" navigationRoute="/">
+        <button mat-icon-button td-menu-button tdLayoutToggle>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+            <span flex></span>
+            <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" href="https://teradata.github.io/covalent/" target="_blank">
+                <mat-icon>chrome_reader_mode</mat-icon>
+            </a>
+        </div>
 
-<div layout-root>
-    <header layout-header>
-        <mat-toolbar color="primary">
-            <ng-content select="[header]"></ng-content>
-        </mat-toolbar>
-    </header>
-    <div layout-content>
-        <ng-content select="[content]"></ng-content>
-    </div>
-</div>
+        <div layout-content>
+            <ng-content select="[content]"></ng-content>
+        </div>
+
+
+        <td-layout-footer>
+            <div layout="row" layout-align="start center">
+                <span class="mat-caption">Copyright &copy; 2017 Paperwise. All rights reserved</span>
+            </div>
+        </td-layout-footer>
+    </td-layout-nav>
+</td-layout>

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,7 @@ import { HomeModule } from './features/home';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         RouterModule,
         AppRoutingModule,
         HomeModule

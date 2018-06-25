@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './layout.component';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
     MatCommonModule, MatButtonModule, MatListModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatIconModule,
@@ -15,9 +16,12 @@ import {
     CovalentNotificationsModule, CovalentMenuModule, CovalentDataTableModule, CovalentMessageModule
 } from '@covalent/core';
 
+import { LayoutComponent } from './layout.component';
+
 @NgModule({
     imports: [
         CommonModule,
+        FlexLayoutModule,
 
         /** Material Modules */
         MatCommonModule,
