@@ -1,0 +1,10 @@
+<div layout-root>
+    <header layout-header>
+        <mat-toolbar color="primary">
+            <ng-content select="[header]"></ng-content>
+        </mat-toolbar>
+    </header>
+    <div layout-content>
+        <ng-content select="[content]"></ng-content>
+    </div>
+</div>
