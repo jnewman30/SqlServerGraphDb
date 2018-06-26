@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DemoService } from 'src/app/shared/modules/services';
+import { Person } from 'src/app/shared/api';
 
 @Component({
     selector: 'app-home',
@@ -8,12 +9,12 @@ import { DemoService } from 'src/app/shared/modules/services';
 })
 export class HomeComponent implements OnInit {
 
-    data: any[] = [];
+    persons: Person[] = [];
 
     constructor(private demoService: DemoService) { }
 
-    ngOnInit() {
-        this.demoService.getAllPersons().then(console.log);
+    async ngOnInit(): Promise<void> {
+        let persons = await this.demoService.getAllPersons();
+        console.log(persons);
     }
-
 }
