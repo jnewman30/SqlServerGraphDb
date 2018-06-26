@@ -3,7 +3,18 @@
         <mat-icon>home</mat-icon>
     </div>
     <div content>
-        <h2>Home</h2>
+        <ngx-charts-force-directed-graph 
+            *ngIf="visible"
+            [legend]="true"
+            legendTitle="People"
+            [view]="view"
+            [scheme]="colorScheme"
+            schemeType="ordinal"
+            gradient="true"
+            [links]="graph.links"
+            [nodes]="graph.nodes"
+            (select)="selectNode($event)">
+      </ngx-charts-force-directed-graph>
     </div>
 </app-layout>
 

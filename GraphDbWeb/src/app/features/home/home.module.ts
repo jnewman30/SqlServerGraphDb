@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ForceDirectedGraphModule } from '@swimlane/ngx-charts';
 
 import {
     MatCommonModule,
@@ -8,7 +9,6 @@ import {
 } from '@angular/material';
 
 import { LayoutModule } from 'src/app/shared/modules/layout';
-
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
@@ -17,6 +17,7 @@ import { HomeComponent } from './home.component';
         CommonModule,
         HomeRoutingModule,
         LayoutModule,
+        ForceDirectedGraphModule,
 
         /* Angular Material */
         MatCommonModule,

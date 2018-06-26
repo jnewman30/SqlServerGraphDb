@@ -60,6 +60,6 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="TestData.sql" />
+    <Compile Include="TestData.sql" />
   </ItemGroup>
 </Project>

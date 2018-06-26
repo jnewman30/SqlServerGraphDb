@@ -9,11 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphData.Core.GraphQL", "G
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "GraphDb", "GraphDb\GraphDb.sqlproj", "{F05C8C74-ADEE-4AAB-99BA-ECB4745B742C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{92AC730F-AFEE-447E-BCDD-DF14AEF9F2FA}"
-	ProjectSection(SolutionItems) = preProject
-		GraphDb.vsdx = GraphDb.vsdx
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphData.Web", "GraphData.Web\GraphData.Web.csproj", "{AA979BB6-49D4-4BBC-90F4-04ECA477216C}"
 EndProject
 Global
@@ -31,7 +26,6 @@ Global
 		{86CBA915-A231-4F27-BD18-CE4126A77D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86CBA915-A231-4F27-BD18-CE4126A77D19}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F05C8C74-ADEE-4AAB-99BA-ECB4745B742C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F05C8C74-ADEE-4AAB-99BA-ECB4745B742C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F05C8C74-ADEE-4AAB-99BA-ECB4745B742C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F05C8C74-ADEE-4AAB-99BA-ECB4745B742C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F05C8C74-ADEE-4AAB-99BA-ECB4745B742C}.Release|Any CPU.Deploy.0 = Release|Any CPU
