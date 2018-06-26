@@ -10,6 +10,7 @@ namespace GraphData.Core.GraphQL.Model
             Field(x => x.Id, type: typeof(IntGraphType));
             Field(x => x.Name, type: typeof(StringGraphType));
             Field(x => x.LivesIn, type: typeof(CityGraphType));
+            Field(x => x.FriendOf, type: typeof(ListGraphType<PersonGraphType>));
         }
     }
 }

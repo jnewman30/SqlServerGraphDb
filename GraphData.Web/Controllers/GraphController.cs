@@ -23,7 +23,6 @@ namespace GraphData.Web.Controllers
         private IDocumentExecuter Executor { get; }
 
         [HttpPost]
-        [AcceptVerbs("OPTIONS", "POST")]
         public async Task<IActionResult> Run([FromBody] QueryInput queryInput)
         {
             var inputs = queryInput.Variables != null

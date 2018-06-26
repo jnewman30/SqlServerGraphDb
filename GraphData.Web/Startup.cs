@@ -7,6 +7,9 @@ namespace GraphData.Web
 {
     public class Startup
     {
+        private const string DefaultCorsPolicyName = "default";
+        private const string AngularWebAppUri = "http://localhost:4200";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -17,7 +20,18 @@ namespace GraphData.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services
+               .AddCors(options =>
+                            options.AddPolicy(DefaultCorsPolicyName, policy =>
+                            {
+                                policy
+                                   .WithOrigins(AngularWebAppUri)
+                                   .AllowAnyHeader()
+                                   .AllowAnyMethod()
+                                   .AllowCredentials()
+                                   .WithExposedHeaders("WWW-Authenticate");
+                            }))
+               .AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,7 +42,9 @@ namespace GraphData.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app
+               .UseCors(DefaultCorsPolicyName)
+               .UseMvc();
         }
     }
 }

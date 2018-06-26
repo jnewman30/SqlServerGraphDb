@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
     constructor(private demoService: DemoService) { }
 
     ngOnInit() {
+        this.demoService.getAllPersons().then(console.log);
     }
 
 }
