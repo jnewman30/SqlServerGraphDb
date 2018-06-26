@@ -49,7 +49,7 @@ INSERT INTO Person VALUES (15, 'Edith');
 INSERT INTO Restaurant VALUES (1,'Taco Dell','Bellevue');
 INSERT INTO Restaurant VALUES (2,'Ginger and Spice','Seattle');
 INSERT INTO Restaurant VALUES (3,'Noodle Land', 'Redmond');
-INSERT INTO Restaurant VALUES (3,'Pizza Hut', 'Springfield');
+INSERT INTO Restaurant VALUES (4,'Pizza Hut', 'Springfield');
 
 INSERT INTO City VALUES (1,'Bellevue','WA');
 INSERT INTO City VALUES (2,'Seattle','WA');
@@ -98,7 +98,7 @@ INSERT INTO livesIn VALUES ((SELECT $node_id FROM Person WHERE id = 13),
 INSERT INTO livesIn VALUES ((SELECT $node_id FROM Person WHERE id = 14),
       (SELECT $node_id FROM City WHERE id = 4));
 INSERT INTO livesIn VALUES ((SELECT $node_id FROM Person WHERE id = 15),
-      (SELECT $node_id FROM City WHERE id = 5));
+      (SELECT $node_id FROM City WHERE id = 1));
 
 INSERT INTO locatedIn VALUES ((SELECT $node_id FROM Restaurant WHERE id = 1),
       (SELECT $node_id FROM City WHERE id =1));
@@ -130,19 +130,19 @@ INSERT INTO friendof VALUES ((SELECT $NODE_ID FROM person WHERE ID = 14), (SELEC
 INSERT INTO friendof VALUES ((SELECT $NODE_ID FROM person WHERE ID = 15), (SELECT $NODE_ID FROM person WHERE ID = 4));
 
 
--- Find Restaurants that John likes
-SELECT Restaurant.name
-FROM Person, likes, Restaurant
-WHERE MATCH (Person-(likes)->Restaurant)
-AND Person.name = 'John';
+---- Find Restaurants that John likes
+--SELECT Restaurant.name
+--FROM Person, likes, Restaurant
+--WHERE MATCH (Person-(likes)->Restaurant)
+--AND Person.name = 'John';
 
--- Find Restaurants that John's friends like
-SELECT Restaurant.name 
-FROM Person person1, Person person2, likes, friendOf, Restaurant
-WHERE MATCH(person1-(friendOf)->person2-(likes)->Restaurant)
-AND person1.name='John';
+---- Find Restaurants that John's friends like
+--SELECT Restaurant.name 
+--FROM Person person1, Person person2, likes, friendOf, Restaurant
+--WHERE MATCH(person1-(friendOf)->person2-(likes)->Restaurant)
+--AND person1.name='John';
 
--- Find people who like a restaurant in the same city they live in
-SELECT Person.name
-FROM Person, likes, Restaurant, livesIn, City, locatedIn
-WHERE MATCH (Person-(likes)->Restaurant-(locatedIn)->City AND Person-(livesIn)->City);
+---- Find people who like a restaurant in the same city they live in
+--SELECT Person.name
+--FROM Person, likes, Restaurant, livesIn, City, locatedIn
+--WHERE MATCH (Person-(likes)->Restaurant-(locatedIn)->City AND Person-(livesIn)->City);
