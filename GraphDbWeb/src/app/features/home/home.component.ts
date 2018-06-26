@@ -13,11 +13,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     visible: boolean = false;
     view = [];
     colorScheme = colorSets[8];
-
     graph: any = { 
         nodes: [],
         links: []        
     };
+    selectedPerson: Person = null;
+    people: Person[];
 
     constructor(private demoService: DemoService) { }
 
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     async loadPeople(): Promise<void> {
         let persons = await this.demoService.getAllPersons();
+        this.people = persons;
 
         for(let person of persons) {
             this.graph.nodes.push({...person, value: person.name });
@@ -40,7 +42,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
 
         console.log('Graph', this.graph);
-        this.view = [800, 600];
+        this.view = [400, 600];
         this.visible = true;
     }
 
@@ -60,5 +62,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     selectNode(event: any): void {
         console.log('Select Event', event);
+        let p = this.people.find(o => o.name === event.name);
+        if(p == null) {
+            return;
+        }
+        this.selectedPerson = p;
     }
 }

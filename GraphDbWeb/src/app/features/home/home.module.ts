@@ -5,7 +5,9 @@ import { ForceDirectedGraphModule } from '@swimlane/ngx-charts';
 import {
     MatCommonModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatListModule
 } from '@angular/material';
 
 import { LayoutModule } from 'src/app/shared/modules/layout';
@@ -22,7 +24,9 @@ import { HomeComponent } from './home.component';
         /* Angular Material */
         MatCommonModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        MatCardModule,
+        MatListModule
     ],
     declarations: [HomeComponent],
     exports: [HomeComponent]

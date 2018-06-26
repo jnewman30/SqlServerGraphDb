@@ -3,16 +3,27 @@
         <mat-icon>home</mat-icon>
     </div>
     <div content>
-        <ngx-charts-force-directed-graph 
-            *ngIf="visible"
-            [legend]="true"
-            legendTitle="People"
-            [view]="view"
-            [scheme]="colorScheme"
-            schemeType="ordinal"
-            [links]="graph.links"
-            [nodes]="graph.nodes"
-            (select)="selectNode($event)">
-      </ngx-charts-force-directed-graph>
+        <div grid-layout *ngIf="visible">
+            <ngx-charts-force-directed-graph 
+                [legend]="false"
+                [view]="view"
+                [scheme]="colorScheme"
+                [animations]="false"
+                schemeType="ordinal"
+                [links]="graph.links"
+                [nodes]="graph.nodes"
+                (select)="selectNode($event)">
+          </ngx-charts-force-directed-graph>
+
+          <mat-card *ngIf="selectedPerson != null">
+              <mat-card-title>{{selectedPerson.name}}</mat-card-title>
+              <mat-card-content>
+                  <h3>Friends:</h3>
+                  <mat-list>
+                      <mat-list-item *ngFor="let friend of selectedPerson.friendOf">{{friend.name}}</mat-list-item>
+                  </mat-list>
+              </mat-card-content>
+          </mat-card>
+        </div>
     </div>
 </app-layout>
