@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
 
         console.log('Graph', this.graph);
-        this.view = [400, 300];
+        this.view = [800, 600];
         this.visible = true;
     }
 
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         for(let friend of person.friendOf) {
             this.graph.links.push({
                 source: person,
-                target: this.graph.nodes.find(n => n.id == friend.id)
+                target: this.graph.nodes.find(n => n.id == friend.id),
             });
             this.addNodeLinks(friend);
         }      
